@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Watch TV Shows Online, Watch Movies Online</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Interactive Navigation Menu -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <img src="netflix-new-logo.png" alt="Netflix">
+            </div>
+            <div class="navbar-nav">
+                <select class="language-btn">
+                    <option value="en">English</option>
+                    <option value="hi">हिन्दी</option>
+                </select>
+                <button class="sign-in-btn" onclick="showLoginForm()">Sign In</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginForm()">&times;</span>
+            <div class="login-form">
+                <h1>Sign In</h1>
+                <form id="loginForm">
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Email or phone number" required>
+                        <span class="error-msg" id="emailError"></span>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="password" placeholder="Password" required>
+                        <span class="error-msg" id="passwordError"></span>
+                    </div>
+                    <button type="submit" class="login-btn">Sign In</button>
+                    <div class="login-options">
+                        <label class="remember-me">
+                            <input type="checkbox"> Remember me
+                        </label>
+                        <a href="#" class="help-link">Need help?</a>
+                    </div>
+                </form>
+                <div class="signup-link">
+                    New to Netflix? <a href="#" onclick="showSignupForm()">Sign up now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupForm()">&times;</span>
+            <div class="login-form">
+                <h1>Sign Up</h1>
+                <form id="signupForm">
+                    <div class="input-group">
+                        <input type="text" id="fullName" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="signupEmail" placeholder="Email address" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="login-btn">Sign Up</button>
+                </form>
+                <div class="signup-link">
+                    Already have an account? <a href="#" onclick="showLoginForm()">Sign in now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1>Unlimited movies, TV shows and more</h1>
+            <h2>Watch anywhere. Cancel anytime.</h2>
+            <h3>Ready to watch? Enter your email to create or restart your membership.</h3>
+            <div class="email-signup">
+                <input type="email" placeholder="Email address" class="email-input" id="heroEmail">
+                <button class="get-started-btn" onclick="quickSignup()">Get Started ></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="feature">
+            <div class="feature-text">
+                <h1>Enjoy on your TV</h1>
+                <h2>Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.</h2>
+            </div>
+            <div class="feature-img">
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png" alt="TV">
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-img">
+                <img src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/mobile-0819.jpg" alt="Mobile">
+            </div>
+            <div class="feature-text">
+                <h1>Download your shows to watch offline</h1>
+                <h2>Save your favourites easily and always have something to watch.</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq">
+        <h1>Frequently Asked Questions</h1>
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is Netflix?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Netflix is a streaming service that offers a wide variety of award-winning TV shows, movies and documentaries.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How much does Netflix cost?</h3>
+                    <span class="faq-toggle">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Plans range from ₹149 to ₹649 a month. No extra costs, no contracts.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>

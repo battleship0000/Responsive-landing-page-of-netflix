@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - Movies & TV Shows</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="movies-page">
+    <!-- Interactive Navigation Menu -->
+    <nav class="navbar movies-nav" id="navbar">
+        <div class="navbar-container">
+            <div class="navbar-brand">
+                <img src="image/netflix-new-logo.png" alt="Netflix">
+            </div>
+            <div class="nav-links">
+                <a href="#" class="nav-link active">Home</a>
+                <a href="#" class="nav-link">TV Shows</a>
+                <a href="#" class="nav-link">Movies</a>
+                <a href="#" class="nav-link">New & Popular</a>
+                <a href="#" class="nav-link">My List</a>
+            </div>
+            <div class="nav-right">
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search movies..." id="searchInput">
+                    <button class="search-btn">🔍</button>
+                </div>
+                <div class="user-menu">
+                    <img src="https://i.pravatar.cc/32" alt="User" class="user-avatar">
+                    <div class="dropdown">
+                        <a href="#" onclick="logout()">Sign out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Featured Movie Hero -->
+    <section class="featured-hero">
+        <div class="featured-bg"></div>
+        <div class="featured-content">
+            <h1 id="featuredTitle">Stranger Things</h1>
+            <p id="featuredDescription">When a young boy vanishes, a small town uncovers a mystery involving secret experiments, terrifying supernatural forces and one strange little girl.</p>
+            <div class="featured-buttons">
+                <button class="play-btn" onclick="playMovie('featured')">▶ Play</button>
+                <button class="info-btn" onclick="showMovieInfo('featured')">ℹ More Info</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Categories -->
+    <main class="movies-container">
+        <div class="movie-section">
+            <h2>Trending Now</h2>
+            <div class="movie-row" id="trendingMovies"></div>
+        </div>
+
+        <div class="movie-section">
+            <h2>Netflix Originals</h2>
+            <div class="movie-row" id="netflixOriginals"></div>
+        </div>
+
+        <div class="movie-section">
+            <h2>Action Movies</h2>
+            <div class="movie-row" id="actionMovies"></div>
+        </div>
+
+        <div class="movie-section">
+            <h2>Comedy Movies</h2>
+            <div class="movie-row" id="comedyMovies"></div>
+        </div>
+
+        <div class="movie-section">
+            <h2>Horror Movies</h2>
+            <div class="movie-row" id="horrorMovies"></div>
+        </div>
+
+        <div class="movie-section">
+            <h2>Romance Movies</h2>
+            <div class="movie-row" id="romanceMovies"></div>
+        </div>
+    </main>
+
+    <!-- Movie Details Modal -->
+    <div id="movieModal" class="modal movie-modal">
+        <div class="modal-content movie-details">
+            <span class="close" onclick="closeMovieModal()">&times;</span>
+            <div class="movie-detail-content">
+                <img id="moviePoster" src="" alt="Movie Poster">
+                <div class="movie-info">
+                    <h2 id="movieTitle"></h2>
+                    <div class="movie-meta">
+                        <span id="movieYear"></span>
+                        <span id="movieRating"></span>
+                        <span id="movieDuration"></span>
+                    </div>
+                    <p id="movieOverview"></p>
+                    <div class="movie-actions">
+                        <button class="play-btn" onclick="playSelectedMovie()">▶ Play</button>
+                        <button class="list-btn" onclick="addToList()">+ My List</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Player Modal -->
+    <div id="videoModal" class="modal video-modal">
+        <div class="modal-content video-content">
+            <span class="close" onclick="closeVideoModal()">&times;</span>
+            <div class="video-player">
+                <video id="movieVideo" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <script src="movies.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
